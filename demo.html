@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h1>Hello App!</h1>
+  <p>
+    <!-- 使用 router-link 组件来导航. -->
+    <!-- 通过传入 `to` 属性指定链接. -->
+    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+    <router-link to="/foo">Go to Foo</router-link>
+    <router-link to="/bar">Go to Bar</router-link>
+  </p>
+  <!-- 路由出口 -->
+  <!-- 路由匹配到的组件将渲染在这里 -->
+  <router-view></router-view>
+</div>
+
+<script src="js/vue.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+  var Foo={
+    template:'<div>Foo</div>'
+  };
+  var Bar={
+    template:'<div>Bar</div>'
+  };
+  var routes=[
+    {path:'/foo',component:Foo},
+    {path:'/bar',component:Bar}
+  ];
+  var router=new VueRouter({
+    routes:routes
+  });
+
+  var app = new Vue({
+    el: '#app',
+    router:router
+  });
+
+</script>
+</body>
+</html>

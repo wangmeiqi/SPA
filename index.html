@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
-    <div id="app">
-      <my-login></my-login>
+  <div id="app">
+    <div class="app-container">
+      <router-view @userlogin="loginClick" @itemclick = "itemClick" :list="list" :user-info="userInfo" :item="item"></router-view>
     </div>
+  </div>
     <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
